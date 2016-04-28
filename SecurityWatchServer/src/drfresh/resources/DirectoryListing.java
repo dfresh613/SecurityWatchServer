@@ -27,7 +27,7 @@ public class DirectoryListing implements Serializable{
 	 * Overloaded constructor, used when the user does a get on a particular directory
 	 */
 	public DirectoryListing(String dirName){
-		String dirLocation = ROOT_DIR+File.separator+dirName;
+		String dirLocation = dirName;
 		getAndSetDirectoryContents(dirLocation);
 	}
 
