@@ -38,6 +38,10 @@ public class DirectoryListing implements Serializable{
 	private void getAndSetDirectoryContents(String dirLoc){
 		File rDir = new File(dirLoc);
 		currentDir = rDir.getAbsolutePath();
+		//make sure callers can only access things within the rootDir
+		if(!currentDir.contains(ROOT_DIR)){
+			System.out.println("You're not authorized to access that dir");
+		}
 		if(!rDir.exists() || !rDir.isDirectory()){
 			System.out.println("directory doesn't exist!");
 			return;

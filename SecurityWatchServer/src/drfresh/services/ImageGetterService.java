@@ -33,12 +33,12 @@ public class ImageGetterService extends HttpServlet {
 			 response.sendError(HttpServletResponse.SC_NOT_FOUND);
 		}
 		
-
+		
 		File image = new File(imageLoc);
 		if(!image.exists() || image.isDirectory()){
 			 response.sendError(HttpServletResponse.SC_NOT_FOUND);
 		}
-		
+		System.out.println("Sending File: "+imageLoc);
 		
 		BufferedImage imgBuffer = ImageIO.read(image);
 		OutputStream outStream = response.getOutputStream();
